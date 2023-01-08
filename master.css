@@ -166,6 +166,49 @@ ul {
 
 /* End Title Animation */
 /* End Global Rules */
+.spikes {
+    position: relative;
+}
+
+.spikes::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 30px;
+    /* background-color: red; */
+    background-size: 50px 50px;
+    z-index: 2;
+    background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
+}
+
+.dots {
+    background-image: url(dots.png);
+    height: 186px;
+    width: 204px;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+
+@media(max-width:767px) {
+    .dots {
+        display: none;
+    }
+}
+
+.dots-up {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dots-down {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 /* Start Header */
 .header {
     position: relative;
@@ -575,6 +618,7 @@ ul {
 .articles {
     padding-top: var(--main-padding-top);
     padding-bottom: var(--main-padding-bottom);
+    position: relative;
 }
 
 .articles .container {
@@ -1420,30 +1464,6 @@ ul {
     background-color: white;
 }
 
-.events .dots {
-    background-image: url(/imags/dots.png);
-    height: 186px;
-    width: 204px;
-    background-repeat: no-repeat;
-    position: absolute;
-}
-
-@media(max-width:991px) {
-    .events .dots {
-        display: none;
-    }
-}
-
-.events .dots-up {
-    right: 0;
-    top: 200px;
-}
-
-.events .dots-down {
-    left: 0;
-    bottom: 200px;
-}
-
 .events .container {
     position: relative;
     display: flex;
@@ -1595,31 +1615,6 @@ ul {
     padding-top: var(--main-padding-top);
     padding-bottom: var(--main-padding-bottom);
     background-color: var(--section-background);
-}
-
-.pricing .dots {
-    background-image: url(/imags/dots.png);
-    height: 186px;
-    width: 204px;
-    background-repeat: no-repeat;
-    position: absolute;
-}
-
-/* 
-@media(max-width:991px) {
-    .pricing .dots {
-        display: none;
-    }
-} */
-
-.pricing .dots-up {
-    right: 0;
-    top: 200px;
-}
-
-.pricing .dots-down {
-    left: 0;
-    bottom: 60px;
 }
 
 .pricing .container {
@@ -2276,6 +2271,13 @@ ul {
     color: white;
     padding: 25px;
     margin: 50px 0 0;
+}
+
+.footer .copyright a {
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 18px;
+
 }
 
 /* End Footer */
